@@ -20,7 +20,3 @@ module.exports.login_post = async (req, res) => {
   const token = createToken(user._id);
   res.status(201).json({currUser:user,token});
 };
-module.exports.logout_get = async (req, res) => {
-  localStorage.clear('jwt');
-  localStorage.clear('user');
-};
