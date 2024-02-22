@@ -1,22 +1,20 @@
-const jwt=require('jsonwebtoken');
+const jwt=require('jsonwebtoken')
 
-const verifyToken=(req,res,next)=>{
+module.exports.verify_get=(req,res)=>{
     let token=req.headers['authorization'];
     if(token){
         token=token.split(' ')[1];
         jwt.verify(token,"panacea",(err,decodedToken)=>{
             if(err){
                 console.log(err.message);
-                return res.status(401).json({ error: 'Invalid token. Please login again.' });
+                return res.status(401).json({ error: 'Please Login' });
             }
             else{
-                next()
+                return res.status(200).json({ message: 'Token is valid.' });
             }
         })
     }
     else{
-        console.log("please add token");
+        return res.status(401).json({ error: 'Please login' });
     }
 }
-
-module.exports= verifyToken;
