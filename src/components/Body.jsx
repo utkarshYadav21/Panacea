@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import Image from "./globe.png";
-import { json, useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Body = () => {
   const navigate = useNavigate();
@@ -121,6 +122,7 @@ const Body = () => {
         Project Repository
       </h1>
       <div className="all-cards">
+      <Link to="/details/Social Media">
         <div className="salecard">
 
             <img
@@ -136,6 +138,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart fill">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/Entertainment">
         <div className="salecard">
           <img
             src="../../../images/entertainment.png"
@@ -148,6 +152,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/HealthAndFitness">
         <div className="salecard">
           <img
             src="../../../images/Health and fitness.png"
@@ -162,6 +168,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/Education">
         <div className="salecard">
           <img
             src="../../../images/education.png"
@@ -176,6 +184,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/TravelAndNavigation">
         <div className="salecard">
           <img
             src="../../../images/travel and navigation.png"
@@ -190,6 +200,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/Shopping">
         <div className="salecard">
           <img
             src="../../../images/shopping.png"
@@ -202,6 +214,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/MedicalAndHealth">
         <div className="salecard">
           <img
             src="../../../images/medical and health.png"
@@ -216,6 +230,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
+        <Link to="/details/FoodAndDrink">
         <div className="salecard">
           <img
             src="../../../images/food and drink.png"
@@ -230,6 +246,7 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
+        </Link>
       </div>
       <hr style={{ color: "1px solid gray" }} className="mt-20 mb-10"></hr>
     </div>

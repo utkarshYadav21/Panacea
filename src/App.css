@@ -33,6 +33,7 @@ header{
   height: fit-content;
   min-height: 100vh;
   max-width: fit-content;
+  margin: auto;
 }
 
 .introductory{
@@ -89,10 +90,6 @@ header{
 }
 
 .salecard {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: flex-start;
-  align-items: center;
   margin: 2%;
   padding: 8%;
   font-size: large;
@@ -110,9 +107,7 @@ header{
 }
 
 .salecard img {
-  width: 80%;
-  text-align: center;
-  border-radius: 50%;
+  width: 100%;
 }
 
 .salecard:hover {
@@ -158,7 +153,10 @@ iframe{
 
 .box-2{
   background-image: linear-gradient(65deg,rgb(210, 161, 0),rgb(20, 212, 183),rgb(19, 173, 201));
+}
 
+.selected{
+  border: 2px solid green;
 }
 
 
