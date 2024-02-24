@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import logo from "../../images/logo.png"
 
 const Header = () => {
   const [toggle, setToggle] = useState(true);
@@ -14,11 +15,11 @@ const Header = () => {
   return (
     <header className="bg-white">
       <nav className="flex justify-between items-center w-[94%] h-20 p-1 mx-auto">
-        <div className="w-16">
+        <div className="w-[10%]">
           {/* Here insert your logo Image */}
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
-            className="w-16"
+            src={logo}
+            className=""
           />
         </div>
         {toggle && (

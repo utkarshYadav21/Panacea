@@ -18,7 +18,7 @@ const Orders = () =>{
 
   return (
     <div className="order-container min-h-[100vh] py-[20vh]">
-      <h1 className='mb-[20px] text-4xl decor font-semibold pb-6'>Track Your Orders</h1>
+      <h1 className='mb-[20px] text-4xl decor font-semibold pb-5'>Track Your Orders</h1>
       
       <div className="status-tracker">
         {statuses.map((status, index) => (
@@ -28,6 +28,7 @@ const Orders = () =>{
           </div>
         ))}
       </div>
+      <h1 className='mb-[20px] text-4xl decor font-semibold pb-5'>Book a meeting</h1>
       <Calender />
     </div>
   );

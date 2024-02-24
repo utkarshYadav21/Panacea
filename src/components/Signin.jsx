@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 
@@ -43,7 +43,7 @@ const Signin = () => {
       <div className="login-page">
         <div className="form">
           <h1 style={{ textAlign: "center" }} className="authorization-heading">
-            Signin
+            SignUp
           </h1>
           <form className="login-form">
             <input
@@ -64,7 +64,7 @@ const Signin = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={registerUser}>Signin</button>
+            <button onClick={registerUser}>SignUp</button>
           </form>
         </div>
       </div>

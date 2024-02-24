@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+
+import { useState } from "react";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -33,38 +33,37 @@ const ContactUs = () => {
                 margin: "10px 0px 20px 0px",
               }}
             >
-              Quisque mattis tortor eu tristique sodales. Aenean sit amet justo
-              nec sem vestibulum.
+              You can contact us if you want to be a part of our Freelancing community and for other queries.
             </p>
             <p>Your Name</p>
             <input
               type="text"
-              className="w-fit bg-transparent border-b-2 border-black mb-4"
+              className="w-[60%] bg-transparent border-b-2 border-black mb-4 h-[35px]"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <p>Your Email</p>
             <input
               type="email"
-              className="w-fit bg-transparent border-b-2 border-black mb-4"
+              className="w-[60%] bg-transparent border-b-2 border-black mb-4 h-[35px]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <p>Subject</p>
             <input
               type="text"
-              className="w-fit bg-transparent border-b-2 border-black mb-4"
+              className="w-[60%] bg-transparent border-b-2 border-black mb-4 h-[35px]"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
             />
             <p>Your Message</p>
             <textarea
-              className="w-[34%] min-w-[210px] bg-transparent border-b-2 border-black mb-4"
+              className="w-[60%] min-w-[210px] bg-transparent border-b-2 border-black mb-4 "
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
-          <button className="send rounded-full p-3 w-fit border-blue-500" onClick={handleClick}>
+          <button className="rounded-[5%] p-3 w-fit border-blue-500 bg-black text-white" onClick={handleClick}>
             Send Message
           </button>
         </div>
