@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import Image from "./globe.png";
-import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Body = () => {
@@ -130,7 +129,7 @@ const Body = () => {
               className="card-image"
             />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Social Media</h4>
+            <h4 className="text-3xl my-5">Social Media</h4>
             <p className="my-3">
               Examples: Facebook, Instagram, Twitter, LinkedIn, Snapchat
             </p>
@@ -144,10 +143,10 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Entertainment</h4>
+            <h4 className="text-3xl my-5">Entertainment</h4>
             <p className="my-3">Examples: Netflix, Spotify, YouTube, Twitch</p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
         <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/HealthAndFitness")} >
@@ -157,12 +156,12 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Health and Fitness</h4>
+            <h4 className="text-3xl my-5">Health and Fitness</h4>
             <p className="my-3">
               Examples: Fitbit, MyFitnessPal, Headspace, Nike Training Club
             </p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
         <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Education")} >
@@ -172,12 +171,12 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Education</h4>
+            <h4 className="text-3xl my-5">Education</h4>
             <p className="my-3">
               Examples: Duolingo, Khan Academy, Quizlet, Google Classroom
             </p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
         <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/TravelAndNavigation")} >
@@ -187,12 +186,12 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Travel and Navigation</h4>
+            <h4 className="text-3xl my-5">Travel and Navigation</h4>
             <p className="my-3">
               Examples: Google Maps, Uber, Airbnb, TripAdvisor
             </p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
         <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Shopping")} >
@@ -202,10 +201,10 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Shopping</h4>
+            <h4 className="text-3xl my-5">Shopping</h4>
             <p className="my-3">Examples: Amazon, eBay, Etsy, Walmart</p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
         <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/MedicalAndHealth")} >
@@ -215,12 +214,12 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Medical and Health</h4>
+            <h4 className="text-3xl my-5">Medical and Health</h4>
             <p className="my-3">
               Examples: WebMD, Medscape, HealthTap, MyChart
             </p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
         <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/FoodAndDrink")} >
@@ -230,12 +229,12 @@ const Body = () => {
             className="card-image"
           />
           <div className="card-content">
-            <h4 className="text-3xl my-2">Food and Drink</h4>
+            <h4 className="text-3xl my-5">Food and Drink</h4>
             <p className="my-3">
               Examples: Uber Eats, Starbucks, MyFitnessPal, Yummly
             </p>
           </div>
-          <button className="add-to-cart">KNOW MORE</button>
+          <button className="add-to-cart fill">KNOW MORE</button>
         </div>
 
       </div>
