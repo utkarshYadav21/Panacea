@@ -9,11 +9,12 @@ module.exports.contact_post=async(req,res)=>{
     res.send({contact});
 }
 module.exports.Request_post=async(req,res)=>{
-    const {image,name,email,colorCode,description}=req.body;
-    let request=new Request({image,name,email,colorCode,description});
+    let {selectedColor,selectedImage,description,Name,Email,choiceOfService}=req.body;
+    console.log(selectedColor,selectedImage,description,Name,Email,choiceOfService)
+    let request=new Request({image:selectedImage,name:Name,email:Email,colorCode:selectedColor,description,choiceOfService});
     request=await request.save();
     console.log(request);
-    res.send({request});
+    res.send(request);
 }
 module.exports.service_post=async(req,res)=>{
     const {name,email,typeOfService}=req.body;
