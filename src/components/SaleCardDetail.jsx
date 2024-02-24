@@ -50,7 +50,7 @@ const SaleCardDetail = () => {
       <h1 className="text-white">{title}</h1>
       <h2 className="text-white text-4xl my-10 text-center font-bold">Select Themes</h2>
       <div className="theme-images">
-        {/* Map through your themes and display images */}
+        
         {salecardImages.map((image, index) => (
           <img
             key={index}
@@ -71,7 +71,7 @@ const SaleCardDetail = () => {
       />
       <div className="color-display border-gray" style={{ backgroundColor: selectedColor }}></div>
       <textarea placeholder="Enter Your Recommendations here" className="decor w-full h-[10vh] my-5 rounded-[1px] py-1 px-2 border-zinc-100"></textarea>
-      <button onClick={handleSave} className="text-green-950 border-1px rounded-3xl py-2 mt-5 w-full type font-semibold ">Save</button>  
+      <button onClick={handleSave} className="text-green-950 border-1px rounded-3xl py-2 mt-5 w-full type font-semibold">Save</button>  
       {isButtonVisible && <><p className="text-blue-500 m-2 mt-4 text-center">₹ {price}</p><button className="type w-full mb-5 rounded-3xl py-2 font-black">PAY NOW</button></>}
     </div>
   );
