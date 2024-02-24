@@ -122,7 +122,7 @@ const Body = () => {
         Project Repository
       </h1>
       <div className="all-cards">
-        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Social Media")}>
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/SocialMedia")}>
             <img
               src="../../../images/social media.png"
               alt="cardImage"

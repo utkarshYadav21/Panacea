@@ -1,13 +1,14 @@
-const mongoose=require('mongoose');
+const mongoose = require("mongoose");
 
-const RequestSchema=mongoose.Schema({
-    image:{ type: String, required: true },
-    colorCode:{ type: String, required: true },
-    name:{ type: String, required: true },
-    email:{ type: String, required: true },
-    description:String
+const RequestSchema = mongoose.Schema({
+  image: { type: String, required: true },
+  colorCode: { type: String, required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  description: String,
+  choiceOfService: { type: String,required: true}
 });
 
-const Request=mongoose.model('Request',RequestSchema);
+const Request = mongoose.model("Request", RequestSchema);
 
-module.exports=Request;
+module.exports = Request;
