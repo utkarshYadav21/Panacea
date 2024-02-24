@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import Image from "./globe.png";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 
 const Body = () => {
   const navigate = useNavigate();
@@ -16,27 +16,64 @@ const Body = () => {
   const handleGetStarted = async (sectionId) => {
     const jwt = localStorage.getItem("jwt");
     try {
-        let response = await fetch("http://localhost:3000/verifyToken", {
-          method: "get",
-          headers: {
-            Authorization: `Bearer ${jwt}`,
-          },
-        });
-        if (!response.ok) {
-          throw new Error("Failed to verify token");
-        }
-        const data = await response.json();
-        if (data.message === "Token is valid.") {
-          scrollToSection(sectionId);
-        } else {
-          throw new Error(data.error || "Unknown error occurred");
-        }
-      } catch (error) {
-        console.error("Error occurred:", error.message);
-        alert("An error occurred. Please try again.");
-        navigate("/login");
+      let response = await fetch("http://localhost:3000/verifyToken", {
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to verify token");
       }
+      const data = await response.json();
+      if (data.message === "Token is valid.") {
+        scrollToSection(sectionId);
+      } else {
+        throw new Error(data.error || "Please Login");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error.message);
+      alert("An error occurred. Please try again.");
+      navigate("/login");
+    }
   };
+  const handleServiceChoice=async(sectionId,chosenService)=>{
+    const jwt = localStorage.getItem("jwt");
+    try {
+      let response = await fetch("http://localhost:3000/verifyToken", {
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${jwt}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to verify token");
+      }
+      const data = await response.json();
+      if (data.message === "Token is valid.") {
+        let user=localStorage.getItem('user');
+        user=JSON.parse(user);
+        console.log(user)
+        console.log(user.Name,user.Email)
+        let service=await fetch("http://localhost:3000/service",{
+          body:JSON.stringify({name:user.Name,email:user.Email,typeOfService:chosenService}),
+          method:'post',
+          headers:{
+            'Content-Type':'application/json'
+          }
+        })
+        service=await service.json();
+        console.log(service);
+        scrollToSection(sectionId);
+      } else {
+        throw new Error(data.error || "Please Login");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error.message);
+      alert("An error occurred. Please try again.");
+      navigate("/login");
+    }
+  }
 
   return (
     <div className="container">
@@ -62,19 +99,19 @@ const Body = () => {
         <div className="type-box flex mb-[20%] text-3xl">
           <p
             className="type text-black text-center m-3 md:w-[30%] p-[5%] rounded-full"
-            onClick={() => handleGetStarted("section2")}
+            onClick={() => handleServiceChoice("section2","Web Application")}
           >
             Web Application
           </p>
           <p
             className="type text-black text-center m-3 md:w-[30%] p-[5%] rounded-full"
-            onClick={() => handleGetStarted("section2")}
+            onClick={() => handleServiceChoice("section2","Android Application")}
           >
             Android Application
           </p>
           <p
             className="type text-black text-center m-3 md:w-[30%] p-[5%] rounded-full"
-            onClick={() => handleGetStarted("section2")}
+            onClick={() => handleServiceChoice("section2","Android and Web Applications")}
           >
             Both
           </p>
@@ -85,11 +122,12 @@ const Body = () => {
       </h1>
       <div className="all-cards">
         <div className="salecard">
-          <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
-            alt="cardImage"
-            className="card-image"
-          />
+
+            <img
+              src="../../../images/social media.png"
+              alt="cardImage"
+              className="card-image"
+            />
           <div className="card-content">
             <h4 className="text-3xl my-2">Social Media</h4>
             <p className="my-3">
@@ -100,7 +138,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/entertainment.png"
             alt="cardImage"
             className="card-image"
           />
@@ -112,7 +150,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/Health and fitness.png"
             alt="cardImage"
             className="card-image"
           />
@@ -126,7 +164,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/education.png"
             alt="cardImage"
             className="card-image"
           />
@@ -140,7 +178,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/travel and navigation.png"
             alt="cardImage"
             className="card-image"
           />
@@ -154,7 +192,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/shopping.png"
             alt="cardImage"
             className="card-image"
           />
@@ -166,7 +204,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/medical and health.png"
             alt="cardImage"
             className="card-image"
           />
@@ -180,7 +218,7 @@ const Body = () => {
         </div>
         <div className="salecard">
           <img
-            src="https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9"
+            src="../../../images/food and drink.png"
             alt="cardImage"
             className="card-image"
           />

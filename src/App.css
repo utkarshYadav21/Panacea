@@ -89,6 +89,10 @@ header{
 }
 
 .salecard {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start;
+  align-items: center;
   margin: 2%;
   padding: 8%;
   font-size: large;
@@ -106,7 +110,9 @@ header{
 }
 
 .salecard img {
-  width: 100%;
+  width: 80%;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .salecard:hover {

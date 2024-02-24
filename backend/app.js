@@ -5,7 +5,7 @@ const User=require('./models/users');
 const cors=require('cors');
 const authRoutes=require('./routes/authRoutes');
 const tokenRoutes=require('./routes/tokenRoute');
-const contactRoutes=require('./routes/RequestRoutes')
+const contactRoutes=require('./routes/adminRoutes')
 
 
 app.use(cors());

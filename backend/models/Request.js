@@ -1,10 +1,10 @@
 const mongoose=require('mongoose');
 
 const RequestSchema=mongoose.Schema({
-    image:String,
-    colorCode:String,
-    name:String,
-    email:String,
+    image:{ type: String, required: true },
+    colorCode:{ type: String, required: true },
+    name:{ type: String, required: true },
+    email:{ type: String, required: true },
     description:String
 });
 

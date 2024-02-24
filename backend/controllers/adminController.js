@@ -1,5 +1,6 @@
 const Request=require('../models/Request');
 const Contact=require('../models/Contact');
+const Service=require("../models/Service");
 
 module.exports.contact_post=async(req,res)=>{
     const {name,email,subject,message}=req.body;
@@ -13,4 +14,11 @@ module.exports.Request_post=async(req,res)=>{
     request=await request.save();
     console.log(request);
     res.send({request});
+}
+module.exports.service_post=async(req,res)=>{
+    const {name,email,typeOfService}=req.body;
+    let service=new Service({name,email,typeOfService});
+    service=await service.save();
+    console.log(service);
+    res.send(service);
 }
