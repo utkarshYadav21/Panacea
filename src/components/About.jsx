@@ -8,7 +8,7 @@ const About = () =>{
                 <div className='basis-[60%]'>
                     <h1 className=" text-white  text-7xl font-extrabold text-left pt-[10%] pb-5">About <span className="decor">Panacea</span></h1>
                     <div className="text-white text-justify py-4">
-                        <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                        <p className='text-2xl'> Welcome to our innovative platform designed to revolutionize the way startups initiate their journey. Say goodbye to the complexities and delays associated with web and Android app development. Our streamlined solution offers easy category selection and tailored UI designs, making the startup initiation process smoother than ever before. With our platform, entrepreneurs can bring their ideas to life swiftly and cost-effectively, without the need for extensive technical knowledge. Join us in shaping the future of startup creation and innovation.</p>
                     </div>
                     <div className=''>
                         <h4 className='font-bold text-white pt-6 pb-4 text-3xl'>Locate Us At</h4>

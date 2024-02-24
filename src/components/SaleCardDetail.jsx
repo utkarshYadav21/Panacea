@@ -48,12 +48,16 @@ const SaleCardDetail = () => {
   };
 
   const handleSave = async() => {
-    const {Name,Email}=JSON.parse(localStorage.getItem('user'))
+    const {Name,Email}=JSON.parse(localStorage.getItem('user'));
     const choiceOfService=localStorage.getItem('serviceChoice');
-    console.log(Name,Email);
-    console.log("Color:", selectedColor);
-    console.log("Selected Image:", selectedImage);
-    console.log(selectedColor,selectedImage,description,Name,Email,choiceOfService);
+    if (!selectedImage) {
+      alert("Please select an image.");
+      return;
+    }
+    if (!Name || !Email) {
+      alert("Name and Email are required.");
+      return;
+    }
     let request=await fetch("http://localhost:3000/requestOrder",{
       body:JSON.stringify({selectedColor,selectedImage,description,Name,Email,choiceOfService}),
       method:"POST",
@@ -64,7 +68,7 @@ const SaleCardDetail = () => {
     request=await request.json();
     console.log(request);
     setIsButtonVisible(true);
-  };
+  };  
   return (
     <div className="salecard-detail m-auto w-[60%] p-10 h-fit min-h-[100vh] min-w-[300px] mb-[100px]">
       <h2 className="text-white text-4xl my-10 text-center font-bold">

@@ -13,24 +13,31 @@ const Signin = () => {
   })
   const registerUser = async (e) => {
     e.preventDefault();
-    let curUser = await fetch("http://localhost:3000/register", {
-      method: "post",
-      body: JSON.stringify({ Name: name, Email: email, Password: password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    curUser = await curUser.json();
-    const { user, token } = curUser;
-    localStorage.setItem("jwt", token);
-    console.log(user);
-    localStorage.setItem("user", JSON.stringify(user));
-    setEmail("");
-    setPassword("");
-    setName("");
-    console.log(user);
-    navigate("/");
+    try {
+      let curUser = await fetch("http://localhost:3000/register", {
+        method: "post",
+        body: JSON.stringify({ Name: name, Email: email, Password: password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!curUser.ok) {
+        const errorMessage = await curUser.text();
+        throw new Error(errorMessage);
+      }
+      curUser = await curUser.json();
+      const { user, token } = curUser;
+      localStorage.setItem("jwt", token);
+      localStorage.setItem("user", JSON.stringify(user));
+      setEmail("");
+      setPassword("");
+      setName("");
+      navigate("/");
+    } catch (error) {
+      alert("An error occurred: " + error.message);
+    }
   };
+  
   return (
     <>
       <div className="login-page">

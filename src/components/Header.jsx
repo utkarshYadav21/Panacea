@@ -64,7 +64,7 @@ const Header = () => {
               </Link>
               <Link to="/signin">
                 <button className="bg-[#8cb4f9] text-white px-5 py-2 mx-2 rounded-full hover:bg-[#699aef]">
-                  Signin
+                  SignUp
                 </button>
               </Link>
             </>

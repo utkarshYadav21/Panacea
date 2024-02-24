@@ -10,7 +10,6 @@ module.exports.contact_post=async(req,res)=>{
 }
 module.exports.Request_post=async(req,res)=>{
     let {selectedColor,selectedImage,description,Name,Email,choiceOfService}=req.body;
-    console.log(selectedColor,selectedImage,description,Name,Email,choiceOfService)
     let request=new Request({image:selectedImage,name:Name,email:Email,colorCode:selectedColor,description,choiceOfService});
     request=await request.save();
     console.log(request);
