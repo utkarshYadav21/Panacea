@@ -165,7 +165,7 @@ iframe{
 .theme-images{
   display: flex;
   padding: 10px 0px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .theme-images img{
@@ -174,7 +174,7 @@ iframe{
   box-shadow:  0 -3px 3px rgba(86, 86, 86, 0.3),
   0 0 0 2px white,
   0.3em 0.3em 1em rgba(240, 254, 255, 0.6);
-  margin-bottom: 5%;
+  margin: 2%;
   min-width: 250px;
 }
 

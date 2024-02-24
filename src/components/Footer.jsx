@@ -1,15 +1,14 @@
-
+import logo2 from "../../images/logo2.png"
 
 const Footer=()=>{
     return(
         <footer>
             <div className="block-1 flex p-2">
-                <div className='w-16'>
-                    {/* Here insert your logo Image */}
-                    <img src='https://store-images.s-microsoft.com/image/apps.26273.14125414353576360.25e774bc-c46c-479a-8230-201323b3a41e.68d1b6c6-f31b-4952-9a8e-fc3deb2d1db9' className='w-16 text-center' />
+                <div className='w-[25%]'>
+                    <img src={logo2} className=" h-fit" />
                 </div>
                 <div className="desc">
-                    <p className="text-white px-2">This is XYZ site for XYZ purpose and it is used for so and so causes.</p>
+                    <p className="text-white px-2">Now, Entrepreneurs can bring their ideas to life swiftly and cost-effectively, without the need for extensive technical knowledge.</p>
                 </div>
             </div>
             <div className="block-2 text-white p-2">

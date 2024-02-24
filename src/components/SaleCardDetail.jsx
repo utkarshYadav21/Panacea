@@ -87,6 +87,7 @@ const SaleCardDetail = () => {
           />
         ))}
       </div>
+      <a href="https://www.figma.com/proto/ldfmLFLF1Y1lK5OHnEFcyV/hackmol?page-id=0%3A1&type=design&node-id=1-4&viewport=504%2C274%2C0.26&t=wHucox21pL8iwrVF-1&scaling=scale-down&starting-point-node-id=1%3A4&show-proto-sidebar=1&mode=design "><button onClick={handleSave} className="text-green-950 border-1px rounded-3xl py-2 mt-5 w-full type font-semibold ">View Figma</button></a>
       <div className="text-center">
       <h2 className="text-white py-5 text-left text-2xl"> Select Color Theme</h2>
       <input
