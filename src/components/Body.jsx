@@ -1,11 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "./globe.png";
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Body = () => {
   const navigate = useNavigate();
+  useEffect(()=>{
+    const serviceChoice=localStorage.getItem('serviceChoice');
+    if(serviceChoice) localStorage.removeItem('serviceChoice');
+  },[])
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -34,7 +38,7 @@ const Body = () => {
       }
     } catch (error) {
       console.error("Error occurred:", error.message);
-      alert("An error occurred. Please try again.");
+      alert("An error occurred. Please login.");
       navigate("/login");
     }
   };
@@ -52,30 +56,27 @@ const Body = () => {
       }
       const data = await response.json();
       if (data.message === "Token is valid.") {
-        let user=localStorage.getItem('user');
-        user=JSON.parse(user);
-        console.log(user)
-        console.log(user.Name,user.Email)
-        let service=await fetch("http://localhost:3000/service",{
-          body:JSON.stringify({name:user.Name,email:user.Email,typeOfService:chosenService}),
-          method:'post',
-          headers:{
-            'Content-Type':'application/json'
-          }
-        })
-        service=await service.json();
-        console.log(service);
+        localStorage.setItem('serviceChoice',chosenService);
         scrollToSection(sectionId);
       } else {
         throw new Error(data.error || "Please Login");
       }
     } catch (error) {
       console.error("Error occurred:", error.message);
-      alert("An error occurred. Please try again.");
+      alert("An error occurred. Please login.");
       navigate("/login");
     }
   }
-
+  const handleSalecardClick=(sectionId,path)=>{
+    const serviceChoice=localStorage.getItem('serviceChoice');
+    if(serviceChoice){
+      navigate(path)
+    }
+    else{
+      alert("Choose a service...");
+      scrollToSection(sectionId)
+    }
+  }
   return (
     <div className="container">
       <div className="introductory mb-14">
@@ -122,9 +123,7 @@ const Body = () => {
         Project Repository
       </h1>
       <div className="all-cards">
-      <Link to="/details/Social Media">
-        <div className="salecard">
-
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Social Media")}>
             <img
               src="../../../images/social media.png"
               alt="cardImage"
@@ -138,9 +137,7 @@ const Body = () => {
           </div>
           <button className="add-to-cart fill">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/Entertainment">
-        <div className="salecard">
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Entertainment")} >
           <img
             src="../../../images/entertainment.png"
             alt="cardImage"
@@ -152,9 +149,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/HealthAndFitness">
-        <div className="salecard">
+
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/HealthAndFitness")} >
           <img
             src="../../../images/Health and fitness.png"
             alt="cardImage"
@@ -168,9 +164,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/Education">
-        <div className="salecard">
+
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Education")} >
           <img
             src="../../../images/education.png"
             alt="cardImage"
@@ -184,9 +179,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/TravelAndNavigation">
-        <div className="salecard">
+
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/TravelAndNavigation")} >
           <img
             src="../../../images/travel and navigation.png"
             alt="cardImage"
@@ -200,9 +194,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/Shopping">
-        <div className="salecard">
+
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/Shopping")} >
           <img
             src="../../../images/shopping.png"
             alt="cardImage"
@@ -214,9 +207,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/MedicalAndHealth">
-        <div className="salecard">
+
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/MedicalAndHealth")} >
           <img
             src="../../../images/medical and health.png"
             alt="cardImage"
@@ -230,9 +222,8 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
-        <Link to="/details/FoodAndDrink">
-        <div className="salecard">
+
+        <div className="salecard" onClick={()=>handleSalecardClick("section1","/details/FoodAndDrink")} >
           <img
             src="../../../images/food and drink.png"
             alt="cardImage"
@@ -246,7 +237,7 @@ const Body = () => {
           </div>
           <button className="add-to-cart">KNOW MORE</button>
         </div>
-        </Link>
+
       </div>
       <hr style={{ color: "1px solid gray" }} className="mt-20 mb-10"></hr>
     </div>
