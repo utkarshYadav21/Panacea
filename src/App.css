@@ -54,6 +54,10 @@ header{
     -webkit-background-clip: text;
   }
 
+  .dec{
+    background: black;
+    border: 1px solid rgb(117, 115, 115);
+  }
 
 .client{
   width: 50%;
@@ -156,10 +160,27 @@ iframe{
   background-image: linear-gradient(65deg,rgb(210, 161, 0),rgb(20, 212, 183),rgb(19, 173, 201));
 }
 
-.selected{
-  border: 2px solid green;
+
+
+.theme-images{
+  display: flex;
+  padding: 10px 0px;
+  justify-content: center;
 }
 
+.theme-images img{
+  width: 70%;
+  margin-right: 5%;
+  box-shadow:  0 -3px 3px rgba(86, 86, 86, 0.3),
+  0 0 0 2px white,
+  0.3em 0.3em 1em rgba(240, 254, 255, 0.6);
+  margin-bottom: 5%;
+  min-width: 250px;
+}
+
+.selected{
+  border: 2px solid rgb(46, 204, 46);
+}
 
 
 @media(max-width:768px)
@@ -191,6 +212,13 @@ iframe{
   {
     width:100%;
     margin: 5% 0px;
+  }
+  .theme-images{
+    flex-direction: column;
+  }
+  .theme-images img{
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
 
