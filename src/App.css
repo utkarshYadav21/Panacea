@@ -182,6 +182,91 @@ iframe{
   border: 2px solid rgb(46, 204, 46);
 }
 
+.order-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.status-tracker {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-node {
+  flex: 1;
+  position: relative;
+}
+
+.status-node p {
+  margin-top: 10px;
+}
+
+.status-node.active .node-circle {
+  background-color: green;
+  border-color: green;
+  color: white;
+}
+
+.node-circle {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.scheduler-container {
+  max-width: 600px;
+  margin: 0 auto;
+  color:white;
+}
+
+.scheduler-container p, input{
+  padding: 8px 0px;
+}
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.date {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.date.disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.time-slots {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.time-slot {
+  cursor: pointer;
+}
+
+.time-slot.selected {
+  border: 1px solid gray;
+  color: white;
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #eee;
+}
+
+
 
 @media(max-width:768px)
 {

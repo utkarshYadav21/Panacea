@@ -1,12 +1,36 @@
+import  { useState, useEffect } from 'react';
+
+import Calender from './Calender';
 
 const Orders = () =>{
-    return(
-        <div className="container">
-            <div className="h-fit min-h-screen">
-                <h1 className=" text-white">Orders Area</h1>
-            </div>
-        </div>
-    );
+    // Initial statuses
+  const statuses = ['Pending', 'Active', 'Completed', 'Rejected'];
+
+  const [statusTracker, setStatusTracker] = useState(new Array(statuses.length).fill(false));
+
+  useEffect(() => {
+    setTimeout(() => {
+      const updatedStatusTracker = [...statusTracker];
+      updatedStatusTracker[1] = true;
+      setStatusTracker(updatedStatusTracker);
+    }, 2000);
+  }, [statusTracker]);
+
+  return (
+    <div className="order-container min-h-[100vh] py-[20vh]">
+      <h1 className='mb-[20px] text-4xl decor font-semibold pb-6'>Track Your Orders</h1>
+      
+      <div className="status-tracker">
+        {statuses.map((status, index) => (
+          <div key={index} className={`status-node ${statusTracker[index] ? 'active' : ''}`}>
+            <div className="node-circle"></div>
+            <p className='text-white'>{status}</p>
+          </div>
+        ))}
+      </div>
+      <Calender />
+    </div>
+  );
 }
 
-export default Orders
+export default Orders;
