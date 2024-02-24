@@ -1,6 +1,5 @@
 const Request=require('../models/Request');
 const Contact=require('../models/Contact');
-const Service=require("../models/Service");
 
 module.exports.contact_post=async(req,res)=>{
     const {name,email,subject,message}=req.body;
@@ -10,7 +9,8 @@ module.exports.contact_post=async(req,res)=>{
 }
 module.exports.Request_post=async(req,res)=>{
     let {selectedColor,selectedImage,description,Name,Email,choiceOfService}=req.body;
-    let request=new Request({image:selectedImage,name:Name,email:Email,colorCode:selectedColor,description,choiceOfService});
+    let status="Pending";
+    let request=new Request({image:selectedImage,name:Name,email:Email,colorCode:selectedColor,description,choiceOfService,status});
     request=await request.save();
     console.log(request);
     res.send(request);

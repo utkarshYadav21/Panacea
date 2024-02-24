@@ -6,7 +6,8 @@ const RequestSchema = mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   description: String,
-  choiceOfService: { type: String,required: true}
+  choiceOfService: { type: String,required: true},
+  status:String
 });
 
 const Request = mongoose.model("Request", RequestSchema);

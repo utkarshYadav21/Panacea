@@ -62,6 +62,7 @@ const SaleCardDetail = () => {
       body:JSON.stringify({selectedColor,selectedImage,description,Name,Email,choiceOfService}),
       method:"POST",
       headers:{
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type':'application/json'
       }
     });
