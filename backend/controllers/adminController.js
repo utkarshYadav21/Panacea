@@ -22,3 +22,10 @@ module.exports.service_post=async(req,res)=>{
     console.log(service);
     res.send(service);
 }
+module.exports.status_get=async(req,res)=>{
+    let {Email}=req.body;
+    let request=await Request.find({email:Email});
+    console.log(request)
+    console.log(request[0].status)
+    res.json(request[0].status);
+}

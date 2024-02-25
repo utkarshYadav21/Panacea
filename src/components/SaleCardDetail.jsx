@@ -68,7 +68,10 @@ const SaleCardDetail = () => {
     request=await request.json();
     console.log(request);
     setIsButtonVisible(true);
-    alert("Data Saved Successfully")
+    setSelectedColor("");
+    setSelectedImage(null);
+    setDescription("");
+    alert("Data Saved Successfully");
   };  
   return (
     <div className="salecard-detail m-auto w-[60%] p-10 h-fit min-h-[100vh] min-w-[300px] mb-[100px]">
@@ -98,8 +101,7 @@ const SaleCardDetail = () => {
       />
 
       <div className="color-display border-gray" style={{ backgroundColor: selectedColor }}></div>
-      <textarea placeholder="Enter Your Recommendations here" className="dec w-full h-[20vh] my-5 rounded-[1px] py-1 px-2 border-zinc-100 text-white"></textarea>
-      
+      <textarea value={description} onChange={(e)=>setDescription(e.target.value)} placeholder="Enter Your Recommendations here" className="dec w-full h-[20vh] my-5 rounded-[1px] py-1 px-2 border-zinc-100 text-white"></textarea>
       <button onClick={handleSave} className="text-green-950 border-1px rounded-3xl py-2 mt-5 w-full type font-semibold max-w-[500px] ">Save</button>  
       
       </div>
