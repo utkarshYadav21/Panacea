@@ -92,7 +92,7 @@ If you encounter any issues or have questions, please refer to the following tro
 ## Contributors
 
 - [Utkarsh Yadav](https://github.com/utkarshYadav21)
-- [Tushar](https://github.com/AadityaPandey30)
+- [Aaditya Pandey](https://github.com/AadityaPandey30)
 
 
 
